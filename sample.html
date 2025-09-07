@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Delivery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffdfb;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 28px;
+      color: #e23744;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .signin {
+      background: transparent;
+      border: 1px solid #e23744;
+      color: #e23744;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: linear-gradient(to right, #fff5ec, #ffe9e4);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .hero p {
+      color: #777;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      background-color: #e23744;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .category {
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .category h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .category-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .category-item {
+      text-align: center;
+    }
+
+    .category-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+    .category-item span {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+    .menu-section {
+      padding: 40px 20px;
+    }
+
+    .menu-title {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .food-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .food-card:hover {
+      transform: scale(1.03);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .food-desc {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .food-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      color: #e23744;
+      font-weight: bold;
+    }
+
+    .stars {
+      color: orange;
+    }
+    footer {
+      background-color: #f8f8f8;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Tomato.</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">App</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="signin">Sign In</button>
+  </header>
+
+  <section class="hero">
+    <h1>Order your favorite food here</h1>
+    <p>Delicious meals delivered hot to your door. Taste the best of your city!</p>
+    <button>View Menu</button>
+  </section>
+
+  <section class="category">
+    <h2>Explore Our Menu</h2>
+    <div class="category-list">
+      <div class="category-item">
+        <img src="https://thfvnext.bing.com/th/id/OIP.bHNigjThnhV9xQEOpPgZAAHaHa?w=185&h=185&c=7&r=0&o=7&cb=thfvnext&dpr=1.4&pid=1.7&rm=3&ucfimg=1" alt="">
+        <span>Salad</span>
+      </div>
+      <div class="category-item">
+        <img src="https://thfvnext.bing.com/th/id/OIP.JQQFsC24wUsXzirK8ES71AHaHa?w=184&h=184&c=7&r=0&o=7&cb=thfvnext&dpr=1.4&pid=1.7&rm=3&ucfimg=1" alt="">
+        <span>Burger</span>
+      </div>
+      <div class="category-item">
+        <img src="https://thfvnext.bing.com/th/id/OIP.Im_Q2zx5hdGpgxgB1M3k5wHaDb?w=343&h=162&c=7&r=0&o=5&cb=thfvnext&dpr=1.4&pid=1.7&ucfimg=1" alt="">
+        <span>Desserts</span>
+      </div>
+      <div class="category-item">
+        <img src="https://thfvnext.bing.com/th/id/OIP.zety4YFjNLIwqTlZkPyPTAHaE7?w=304&h=203&c=7&r=0&o=7&cb=thfvnext&dpr=1.4&pid=1.7&rm=3&ucfimg=1" alt="">
+        <span>Pizza</span>
+      </div>
+      <div class="category-item">
+        <img src="https://thfvnext.bing.com/th/id/OIP.CVjWmL6seUJ3cUwLJIG4fgHaE8?w=284&h=189&c=7&r=0&o=5&cb=thfvnext&dpr=1.4&pid=1.7&ucfimg=1%22"alt="">
+        <span>Pasta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <div class="menu-title">Top Dishes Near You</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.CimDKQTqHe-xG4lKXRSRtAHaHa?r=0&cb=thfvnextucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+        <div class="food-info">
+          <div class="food-name">Greek Salad</div>
+          <div class="food-desc">Fresh cucumbers and feta</div>
+          <div class="food-bottom">
+            <span class="price">₹120</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://thfvnext.bing.com/th/id/OIP.f4ISEU0W13PbvWjrjxUmsQHaEJ?w=302&h=180&c=7&r=0&o=5&cb=thfvnext&dpr=1.4&pid=1.7&ucfimg=1" alt="">
+        <div class="food-info">
+          <div class="food-name">Burger Barn</div>
+          <div class="food-desc">Colorful mix of veggies </div>
+          <div class="food-bottom">
+            <span class="price">₹90</span>
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://thfvnext.bing.com/th/id/OIP.dWeX3qbbfr26hGDXNOSdggHaEK?w=258&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.4&pid=1.7&rm=3&ucfimg=1" alt="">
+        <div class="food-info">
+          <div class="food-name">Chicken Rolls</div>
+          <div class="food-desc">Spicy and crispy rolls</div>
+          <div class="food-bottom">
+            <span class="price">₹140</span>
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.XmiNhOfrec8qPUgE3wojkQAAAA?r=0&cb=thfvnextucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+        <div class="food-info">
+          <div class="food-name">Ripple Ice Cream</div>
+          <div class="food-desc">Chilled dessert delight</div>
+          <div class="food-bottom">
+            <span class="price">₹70</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Tomato | All rights reserved.
+  </footer>
+
+</body>
+</html>
